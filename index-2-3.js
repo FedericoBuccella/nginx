@@ -1,7 +1,7 @@
 const express = require("express");
 const cluster = require("cluster");
 const os = require("os");
-const rutas = require("./routes/index.js");
+
 
 const app = express();
 const cpus = os.cpus();
@@ -14,7 +14,7 @@ if (iscluster && cluster.isPrimary) {
   });
 } else {
   app.get("/api/randoms/datos", (req, res) => {
-    res.send("Server2-3");
+    res.send("Servidor 2-3");
   });
 
   app.listen(PORT, () => {
